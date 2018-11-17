@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"strings"
 )
 
 func main() {
@@ -11,6 +12,7 @@ func main() {
 	if err != nil {
 		fmt.Print(err)
 	}
-	fileContent := string(b) // convert file content into a 'string'
-	fmt.Println(fileContent)
+	fileContent := string(b)             // convert file content into a 'string'
+	words := strings.Fields(fileContent) // insert each word into an array TODO: ignore special characters and process lower case
+	fmt.Println(words)
 }
