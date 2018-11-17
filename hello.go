@@ -14,5 +14,7 @@ func main() {
 	}
 	fileContent := string(b)             // convert file content into a 'string'
 	words := strings.Fields(fileContent) // insert each word into an array TODO: ignore special characters and process lower case
-	fmt.Println(words)
+	for _, element := range words {      //iterate through dictionary
+		fmt.Println(element)
+	}
 }
