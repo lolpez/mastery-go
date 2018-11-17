@@ -19,11 +19,18 @@ func main() {
 	}
 	fileContent := string(b)             // convert file content into a 'string'
 	words := strings.Fields(fileContent) // insert each word into an array TODO: ignore special characters and process lower case
+	wordCounter := map[string]int32{}    //create a new dictionary to insert words with its counter
 	for _, element := range words {      //iterate through dictionary
 		processedString := reg.ReplaceAllString(element, "") //remove special characters from string
 		if len(processedString) > 0 {                        //check if the processed word is empty
 			word := strings.ToLower(processedString) //convert word to lowercase
-			fmt.Println(word)
+			value, ok := wordCounter[word]           //check if the word is already in the dictionary
+			if ok {
+				wordCounter[word] = value + 1 //if the word is already in the dictionary, then increment counter value
+			} else {
+				wordCounter[word] = 1 //else, insert a new word to the dictionary with counter value = 1
+			}
 		}
 	}
+	fmt.Println(wordCounter)
 }
