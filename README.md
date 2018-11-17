@@ -22,7 +22,7 @@ A step by step series of examples that tell you have to get a Development env. r
 ```
 go build
 ```
-* Then execute the program, type:
+* Then execute the program:
 ```
 .\mastery-go.exe
 ```
@@ -31,7 +31,7 @@ go build
 
 * The program will return all words with their frequency in the file.txt located in the project folder (all processed in lower case) 
 
-* Example:
+Example:
 If the file.txt content has:
 ```
 Once upon a midnight dreary, while I pondered weak and we ary,
