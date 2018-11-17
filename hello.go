@@ -5,6 +5,7 @@ import (
 	"io/ioutil"
 	"log"
 	"regexp"
+	"sort"
 	"strings"
 )
 
@@ -32,5 +33,14 @@ func main() {
 			}
 		}
 	}
-	fmt.Println(wordCounter)
+
+	keys := make([]string, 0, len(wordCounter)) //create a new array from dictionary keys
+	for k := range wordCounter {                //iterate through dictionary
+		keys = append(keys, k)
+	}
+	sort.Strings(keys) //sort array alphabetically
+
+	for _, k := range keys {
+		fmt.Println(k, wordCounter[k]) //print words counter
+	}
 }
