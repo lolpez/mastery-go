@@ -28,7 +28,7 @@ func main() {
 			if ok {
 				wordCounter[word] = value + 1 //if the word is already in the dictionary, then increment counter value
 			} else {
-				wordCounter[word] = 1 //else, insert a new word to the dictionary with counter value = 1
+				wordCounter[word] = 1 //else, insert a new word to the dictionary with initial counter value to 1
 			}
 		}
 	}
