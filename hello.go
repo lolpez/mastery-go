@@ -20,7 +20,9 @@ func main() {
 	fileContent := string(b)             // convert file content into a 'string'
 	words := strings.Fields(fileContent) // insert each word into an array TODO: ignore special characters and process lower case
 	for _, element := range words {      //iterate through dictionary
-		processedString := reg.ReplaceAllString(element, "")
-		fmt.Println(processedString)
+		processedString := reg.ReplaceAllString(element, "") //remove special characters from string
+		if len(processedString) > 0 {                        //check if the word is empty
+			fmt.Println(processedString)
+		}
 	}
 }
