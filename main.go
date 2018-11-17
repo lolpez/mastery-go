@@ -19,7 +19,7 @@ func main() {
 		fmt.Print(err)
 	}
 	fileContent := string(b)                          // convert file content into a 'string'
-	words := strings.Fields(fileContent)              // insert each word into an array TODO: ignore special characters and process lower case
+	words := strings.Fields(fileContent)              // insert each word into an array and ignore line breaks
 	wordCounter := map[string]int32{}                 //create a new dictionary to insert words with its counter
 	wordsSlice := make([]string, 0, len(wordCounter)) //create a new slice (dynamic array) for words
 	for _, element := range words {                   //iterate through dictionary
